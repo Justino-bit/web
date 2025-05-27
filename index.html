@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Academia de Danza</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, #f5f0fc, #e3dffb);
+    color: #4a2c72;
+  }
+  header {
+    background-color: #6f42c1;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #512da8;
+  }
+  nav a {
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover, nav a.active {
+    background-color: #311b92;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto 4rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgb(111 66 193 / 0.2);
+    padding: 2rem;
+  }
+  h2 {
+    color: #6f42c1;
+    margin-top: 0;
+    border-bottom: 3px solid #b99cff;
+    padding-bottom: 0.3rem;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  /* Tabla diseño */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  table thead {
+    background-color: #7e57c2;
+    color: white;
+  }
+  table th, table td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #c8c8c8;
+    text-align: center;
+  }
+  table tbody tr:nth-child(even) {
+    background-color: #f3eeff;
+  }
+  /* Formulario */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  label {
+    font-weight: 700;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    padding: 0.5rem 0.7rem;
+    border: 2px solid #b99cff;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #6f42c1;
+    outline: none;
+  }
+  button {
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #512da8;
+  }
+  /* Multimedia */
+  audio, video {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(111, 66, 193, 0.3);
+  }
+  /* Marquesina movimiento de texto */
+  .marquee {
+    background-color: #b99cff;
+    color: #3e0d65;
+    font-weight: 700;
+    padding: 0.8rem 0;
+    margin: 2rem 0 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: inset 0 0 10px rgba(111, 66, 193, 0.7);
+  }
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    font-size: 1.3rem;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  footer {
+    text-align: center;
+    background-color: #6f42c1;
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      padding: 0.8rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Academia de Danza "Ritmo Vivo"</h1>
+</header>
+<nav>
+  <a href="#inicio" class="active" onclick="showSection(event, 'inicio')">Inicio</a>
+  <a href="#clases" onclick="showSection(event, 'clases')">Clases y Horarios</a>
+  <a href="#contacto" onclick="showSection(event, 'contacto')">Contacto</a>
+  <a href="https://www.international-dance-day.org/es/index.html" target="_blank" rel="noopener noreferrer" title="Página externa de danza">Danza Internacional</a>
+</nav>
+
+<main>
+  <!-- Sección Inicio -->
+  <section id="inicio" class="section-active">
+    <h2>Bienvenidos a Ritmo Vivo</h2>
+    <p>En nuestra academia te invitamos a descubrir el arte del movimiento, la pasión por la danza y el compañerismo. Ofrecemos clases para todas las edades y niveles en un ambiente amable y profesional.</p>
+    <div class="marquee"><span>Inscripciones abiertas: ¡No pierdas la oportunidad de bailar y disfrutar con nosotros!</span></div>
+    <h3>Un poco sobre nosotros</h3>
+    <p>Fundada en 2010, Ritmo Vivo se ha convertido en un espacio para cultivar talentos y expresar emociones a través de distintos estilos de baile:</p>
+    <ul>
+      <li>Ballet Clásico</li>
+      <li>Jazz</li>
+      <li>Danza Contemporánea</li>
+      <li>Folklore</li>
+      <li>Hip-hop</li>
+    </ul>
+    <video width="640" height="360" controls>
+      <source src="coverr-couple-dancing-4825-1080p.mp4" type="video/mp4">
+    </video>
+    <audio controls>
+      <source src="Travis-Scott-FE-N-(HipHopKit.com).mp3" type="audio/mp3">
+    </audio>
+  </section>
+
+  <!-- Sección Clases y Horarios -->
+  <section id="clases" class="section-hide">
+    <h2>Clases y Horarios</h2>
+    <p>Encuentra la clase que más te guste y el horario que mejor se adapte a ti.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Clase</th>
+          <th>Días</th>
+          <th>Horario</th>
+          <th>Profesor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ballet Clásico</td>
+          <td>Martes y Jueves</td>
+          <td>17:00 - 18:30</td>
+          <td>Laura Gómez</td>
+        </tr>
+        <tr>
+          <td>Jazz</td>
+          <td>Lunes y Miércoles</td>
+          <td>18:30 - 20:00</td>
+          <td>Javier Pérez</td>
+        </tr>
+        <tr>
+          <td>Danza Contemporánea</td>
+          <td>Viernes</td>
+          <td>19:00 - 20:30</td>
+          <td>Sofía Martínez</td>
+        </tr>
+        <tr>
+          <td>Folklore</td>
+          <td>Sábado</td>
+          <td>10:00 - 12:00</td>
+          <td>Rosa Díaz</td>
+        </tr>
+        <tr>
+          <td>Hip-hop</td>
+          <td>Miércoles y Viernes</td>
+          <td>17:00 - 18:30</td>
+          <td>David Sánchez</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="section-hide">
+    <h2>Contacto e Inscripción</h2>
+    <p>Si quieres unirte a nuestra familia de danza, completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+    <form id="contactForm" onsubmit="return handleSubmit(event)">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" />
+
+      <label for="clase">Clase de interés:</label>
+      <select id="clase" name="clase" required>
+        <option value="" disabled selected>Selecciona una clase</option>
+        <option value="ballet">Ballet Clásico</option>
+        <option value="jazz">Jazz</option>
+        <option value="contemporanea">Danza Contemporánea</option>
+        <option value="folklore">Folklore</option>
+        <option value="hiphop">Hip-hop</option>
+      </select>
+
+      <label for="mensaje">Mensaje adicional:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Algo que quieras decirnos..."></textarea>
+
+      <button type="submit">Enviar Inscripción</button>
+    </form>
+    <div id="formResponse" style="margin-top:1rem; font-weight:700; color:#6f42c1;"></div>
+  </section>
+</main>
+<script>
+  // Función para mostrar la sección seleccionada y ocultar las otras
+  function showSection(event, sectionId) {
+    event.preventDefault();
+    // Cambiar links activos
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // Ocultar todas las secciones
+    document.querySelectorAll('main section').forEach(sec => {
+      if(sec.id === sectionId) {
+        sec.classList.remove('section-hide');
+        sec.classList.add('section-active');
+      } else {
+        sec.classList.remove('section-active');
+        sec.classList.add('section-hide');
+      }
+    });
+  }
+
+  // Validación y simulación de envío del formulario
+  function handleSubmit(event) {
+    event.preventDefault();
+    const nombre = event.target.nombre.value.trim();
+    const email = event.target.email.value.trim();
+    const clase = event.target.clase.value;
+    const mensaje = event.target.mensaje.value.trim();
+
+    if (!nombre || !email || !clase) {
+      alert("Por favor, completa los campos obligatorios.");
+      return false;
+    }
+
+    // Simula envío exitoso
+    document.getElementById("formResponse").textContent = 
+      `Gracias, ${nombre}, por inscribirte en la clase de ${clase}. Nosotros te contactaremos pronto a ${email}.`;
+
+    event.target.reset();
+    return false;
+  }
+</script>
+
+<style>
+  .section-hide {
+    display: none;
+  }
+  .section-active {
+    display: block;
+  }
+</style>
+</body>
+</html>
+
+```
